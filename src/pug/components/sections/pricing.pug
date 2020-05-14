@@ -1,0 +1,18 @@
+section.pricing
+  .wrapper
+    h2.title.main-title Почему стоит покупать<br>мебель в Китае
+    .columns.clear
+      each column in columns
+        .column
+          .column-icon(class="dec-" + column.iconDecoration)
+            img(src="../img/circleicon.png", alt="Column icon")
+          h4= column.title
+          .column-content
+            ul.column-list
+              each item in columnListItems
+                li= item
+            .column-totals
+              p.column-totals-title В итоге розничная цена: 
+              p.column-totals-content= column.total
+    p.butn-row
+      a.main-butn(href="#") Хочу заказать мебель с 200% экономией

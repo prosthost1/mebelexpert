@@ -1,0 +1,90 @@
+.top-content
+  width: 100%
+  padding: 30px 0 25px
+  a 
+    display: block
+  .tel
+    margin-bottom: 5px
+.contact-phone
+  float: right
+.tel
+  font-size: 23px;
+  line-height: 29px;
+  font-weight: $thin
+  color: color(text-gray)
+  &:hover 
+    color: color(red)
+.call-back_butn
+  +butn()
+  
+  &:hover 
+    color: color(white)
+    background-color: color(red)
+.logo 
+  float: left
+  font-size: 0
+.alert
+  padding: 25px 0 60px
+  background-image: url(../img/headerbg.png)
+  background-size: cover
+  text-align: center
+.title-header
+  padding: 20px 0
+  margin-bottom: 40px
+  background-color: rgba(255,255,255, 0.7)
+.header-title
+  +text(74px, $textGray, $normal)
+.sub-header-title
+  +text(27px, $textGray, $bold)
+.header-title-caption
+  +text(23px, $textGray, $thin)
+.form 
+  width: 434px
+  margin: 0 auto
+  padding: 25px 29px 50px
+  box-sizing: border-box
+  background-color: rgba(0, 0, 0, 0.7)
+  text-align: left
+  .input-text
+    margin-bottom: 12px
+  ul
+    padding-left: 24px
+    line-height: 30px
+    +text(18px, $white, $semiBold, 0 0 25px)
+    li
+      position: relative
+    li:before
+      content: ''
+      position: absolute
+      left: -22px
+      top: 12px
+      width: 6px;
+      height: 6px;
+      background-color: $red;
+.form-title 
+  +text(23px, $white, $thin)
+  text-align: center
+  margin-bottom: 10px
+.inputs
+  padding-bottom: 15px
+.input-text 
+  display: block
+  box-sizing: border-box
+  width: 100%
+  padding: 11px 20px
+  border-radius: 2px;
+  background-color: $white;
+  border: 1px solid transparent;
+  &:focus
+    border-color: $red
+  &::placeholder
+    +text(14px, $textGray, $thin)
+.submit-butn
+  +butn(15px 45px, 19px, $white, $red, $red)
+  font-weight: $semiBold
+  border-radius: 2px
+  cursor: pointer
+  &:hover
+    background-color: $white
+    color: $red
+    

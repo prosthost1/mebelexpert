@@ -1,0 +1,133 @@
+.pricing
+  padding: 70px 0
+  +bg("mainbg.png")
+.title
+  position: relative
+  +text(61px, $textGray, $thin)
+  text-align: center
+  text-transform: uppercase
+  line-height: 70px
+  &:before 
+    content: ''
+    +posAbsolute(455px, 11px)
+    bottom: -40px
+    left: 50%
+    background-image: url(../img/titledecor.png)
+    transform: translate(-50%)
+.main-title 
+   margin-bottom: 120px
+.columns 
+  margin-bottom: 60px
+  text-align: center
+  ul, p
+    text-align: left
+  h4
+    position: relative
+    +text(28px, $textGray, $thin, 0 0 75px)
+    text-transform: uppercase
+    &::before
+      content: ''
+      +posAbsolute(462px, 20px)
+      left: 0
+      bottom: -35px
+      background-image: url(../img/titledecor2.png)
+.column 
+  width: 46.2%
+.column:first-child
+  float: left
+  h4
+    font-weight: $semiBold
+.column:last-child
+  float: right
+.column-icon 
+  display: inline-block
+  position: relative
+  margin-bottom: 30px
+  &:before
+    content: ''
+    +posAbsolute(117px, 133px)
+    background-image: url(../img/icondecor.png)
+.dec-right-top:before
+  left: 194px
+.dec-left-bottom:before
+  top: 135px
+  left: 42px
+  transform: rotate(180deg)
+.column-content 
+  padding-left: 25px
+.column-list 
+  padding: 0
+  li 
+    +text(18px, $textGray, $normal, 0 0 35px)
+    position: relative
+    &::before 
+      content: ''
+      +posAbsolute(10px, 9px)
+      left: -20px
+      top: 7px
+      background-color: $red
+.column-totals-title
+  +text(18px, $red, $bold, 0 0 10px)
+  text-transform: uppercase
+.column-totals-content
+  +text(18px, $textGray, $semiBold)
+  line-height: 30px
+.main-butn 
+  +butn(15px 25px, 19px)
+  &:hover
+    color: $white
+    background-color: $red
+.advantage 
+  width: 100%
+  font-size: 0
+  .wrapper
+    display: flex
+    justify-content: space-between
+.advantage:nth-child(even)
+  background-image: linear-gradient(to right, #fff, #f1f5f3, #fff)
+  text-align: right
+  .wrapper
+    flex-direction: row-reverse
+.advantage:nth-child(odd)
+  .advantagesimage:before 
+    left: -40px
+.guide
+  .advantagesimage:before 
+    left: 10px
+.advantagescontent 
+  max-width: 726px
+  h3
+    +text(27px, $textGray, $semiBold, 0 0 20px)
+    text-transform: uppercase
+  p
+    +text(18px, $textGray, $thin)
+    line-height: 30px
+.advantagesimage
+  position: relative
+  img
+    z-index: 100
+  &:before
+    content: ''
+    +posAbsolute(277px, 277px)
+    top: -30px
+    background-image: url(../img/advantagedec.png)
+@each $advantage in $advantages
+  .#{map-get($advantage, name)}
+    padding: map-get($advantage, padding)
+    h3 
+      margin: map-get($advantage, margin)
+.factory
+  .advantagescontent
+  p
+    padding-left: 12px
+    max-width: 633px
+    font-size: 20px
+  h3
+    font-size: 29px
+  .advantagesimage:before
+    width: 354px
+    height: 354px
+    top: -40px
+    background-image: url(../img/factorydec.png)
+    
+  

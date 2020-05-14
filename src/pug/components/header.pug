@@ -1,0 +1,28 @@
+header 
+  .wrapper
+    .top-content.clear
+      a(href="#").logo
+        img(src="img/logo.png", alt="Лого")
+      .contact-phone
+        a(href="tel:+74957254226").tel +7 495 725-42-26
+        a(href="#").butn.call-back_butn Обратный  звонок
+  .alert
+    .title-header
+      h2.header-title МЕБЕЛЬНЫЕ ТУРЫ В КИТАЙ
+      h3.sub-header-title С БЕСПЛАТНЫМ ГИДОМ И ПЕРЕВОДЧИКОМ
+      h4.header-title-caption 5-10 дневная поездка в центр мебельной индустрии Китая
+    .form
+      form(action="sendmail.php" method="POST")
+        p.form-title ЗАПОЛНИТЕ ФОРМУ И ПОЛУЧИТЕ:
+        ul 
+          li Бесплатную консультацию
+          li Помощь при просчете стоимости
+          li Каталог мебели
+        .inputs
+          each input in form
+            input(type="text", name=input.content id=input.content placeholder=input.placeholder).input-text
+        input(type="submit", value="Отправить заявку").submit-butn
+        
+
+
+

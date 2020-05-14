@@ -1,0 +1,28 @@
+.clear:after
+  content: ''
+  display: block
+  clear: both
+@import helper/maps
+@import helper/functions
+@import helper/vars
+@import helper/mixins
+@import base/fonts
+body  
+  margin: 0
+  font-family: "Open Sans"
+a 
+  text-decoration: none
+ul 
+  list-style: none
+input
+  outline: none
+input, a
+  +transition()
+.wrapper 
+  max-width: 1000px
+  margin: 0 auto
+.butn-row
+  margin: 0
+  text-align: center
+@import components/header
+@import components/main

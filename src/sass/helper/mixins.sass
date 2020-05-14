@@ -1,0 +1,25 @@
+@mixin transition($transTime: .2s)
+  transition: all $transTime ease
+@mixin butn($padding: 5px 35px, $fontSize: 13px, $color: color(red), $borderColor: color(red), $bgColor: color(white))
+  display: inline-block
+  padding: $padding
+  font-size: $fontSize
+  border: 2px solid $borderColor
+  background-color: $bgColor
+  color: $color
+@mixin text($fontSize, $color, $fontWeight, $margin: 0)
+  margin: $margin
+  font-size: $fontSize
+  color: $color
+  font-weight: $fontWeight
+@mixin bg($url, $bgSize: "contain", $bgRepeat: "no-repeat") 
+  background-image: url("../img/" + $url)
+  background-size: $bgSize
+  background-repeat: $bgRepeat
+@mixin posAbsolute($width, $height)
+  position: absolute
+  width: $width
+  height: $height
+  
+  
+  

@@ -1,0 +1,2 @@
+let name="vlad";
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjcmlwdC5qcyJdLCJuYW1lcyI6WyJuYW1lIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxLQUFPIiwiZmlsZSI6InNjcmlwdHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgbmFtZSA9ICd2bGFkJzsiXX0=
