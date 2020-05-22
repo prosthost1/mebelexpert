@@ -8,10 +8,12 @@
 @import helper/mixins
 @import base/fonts
 body  
-  margin: 0
-  font-family: "Open Sans"
+  line-height: 1.15 !important
+  font-family: "Open Sans" !important
 a 
   text-decoration: none
+  &:hover 
+    text-decoration: none
 ul 
   list-style: none
 input
@@ -19,10 +21,11 @@ input
 input, a
   +transition()
 .wrapper 
-  max-width: 1000px
+  width: 53%
   margin: 0 auto
 .butn-row
   margin: 0
   text-align: center
 @import components/header
 @import components/main
+@import components/footer

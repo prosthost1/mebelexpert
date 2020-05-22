@@ -1,3 +1,155 @@
 main
-  include sections/pricing
-  include sections/advantages
+  section.pricing
+    .wrapper
+      h2.title.main-title Почему стоит покупать<br>мебель в Китае
+      .columns.clear
+        each column in columns
+          .column
+            .column-icon(class="dec-" + column.iconDecoration)
+              img(src="img/circleicon.png", alt="Column icon")
+            h4= column.title
+            .column-content
+              ul.column-list
+                each item in columnListItems
+                  li.list-item= item
+              .column-totals
+                p.column-totals-title В итоге розничная цена: 
+                p.column-totals-content= column.total
+    p.butn-row
+      a.main-butn(href="#") Хочу заказать мебель с 200% экономией
+  section.advantages
+    span.tree-dec.tree-dec-right
+    span.tree-dec.tree-dec-left
+    h2.title.main-title преимущества работы с нами
+    - var i = 0
+    each advantage in advantages
+      - i++ 
+      .advantage(class= advantage.name)&attributes({"class": "advantage-" + i})
+        .wrapper
+          .advantage-image 
+            img(src= "img/" + advantage.name + ".png", alt="advantage icon")
+          .advantage-content 
+            h3= advantage.title
+            p We truly care about your site as much as you do, which is why we offer amazing support at our dedicated support center. In addition, we offer free updates with new features requested by our users. You can count on us.
+  section.spa
+    .wrapper
+      .spa-content
+        h3.spa-title Оставляя заявку сейчас Вы получаете  сертификат на 
+          br
+          strong Бесплатное посещение СПА-салона!
+        .spa-info
+          ul.spa-list
+            each item in ["24 часа", "5 массажей", "24 часа питание фуршет", "Wifi", "3 вида парилки", "пилинг", "кинотеатр", "спортзал", "бильярд, настольный тенис, комьюстры"]
+              li.list-item.spa-list_item= item
+          form.spa-form(action="sendmail.php" method="POST")
+            .spa-inputs         
+              each input in form
+                input.input-text(type="text", name=input.content id=input.content placeholder=input.placeholder)
+            input.submit-butn(type="submit", value="Получить сертификат")
+  section.warranties
+    h2.title мы гарантируем:
+    p.warranties-description We truly care about your site as much as you do, which is why we offer amazing support at our dedicated support center. In addition, we offer free updates with new features requested by our users. You can count on us.
+    .wrapper
+      .warranties-items
+        each warranty in warranties 
+          .warranty
+            .warranty-image
+              img(src= warranty.url, alt="Warranty image")
+            h3.warranty-title= warranty.title
+            if warranty.title == "юридическая гарантия:"
+              ul.warranty-list
+                each item in ["1) Бесплатная консультация", "2) Помощь при просчете стоимости", "3) Каталог мебели"]
+                  li.warranty-list_item= item
+  section.cases
+    h2.title.cases-title кейсы:
+    .wrapper
+      #carouselCases.carousel.slide.cases-slider.w-100(data-ride='carousel' data-pause="hover")
+        .carousel-inner
+          .carousel-item.active
+            .slider-content
+              img(src="img/case.png", alt="First slide")
+              .slider-caption
+                p.slider-description 
+                  b Many themes claim to have 
+                  | a quick setup, but leave you dealing with several XML files to manually import. Who wants to do that? We sure don’t. Avada truly offers a quick, easy setup. Install the theme, click the demo  It doesn’t get any easier, our demo content importer is a beautiful thing.<br> Avada truly offers a quick, easy setup. Install the theme, click the demo  It doesn’t get any easier, our demo content importer... beautiful thing.
+                blockquote.feedback
+                  .feedback-author
+                    img(src="img/customer.png", alt="Фото клиента")
+                  p Я в восторге от нашей новой кухни! Об этой фирме узнала от подруги, которая заказывала себе гарнитур в квартиру..
+                    br
+                    b Артем
+          .carousel-item
+            .slider-content
+              img(src="img/case.png", alt="Second slide")
+              .slider-caption
+                p.slider-description 
+                  b Many themes claim to have 
+                  | a quick setup, but leave you dealing with several XML files to manually import. Who wants to do that? We sure don’t. Avada truly offers a quick, easy setup. Install the theme, click the demo  It doesn’t get any easier, our demo content importer is a beautiful thing.<br> Avada truly offers a quick, easy setup. Install the theme, click the demo  It doesn’t get any easier, our demo content importer... beautiful thing.
+                blockquote.feedback
+                  .feedback-author
+                    img(src="img/customer.png", alt="Фото клиента")
+                  p Я в ужасе от нашей новой кухни! Об этой фирме узнала от подруги, которая заказывала себе гарнитур в квартиру..
+                    br
+                    b Влад
+    .slider-controls
+      a.slider-control.slider-control-prev(href='#carouselCases' role='button' data-slide='prev')
+        img(src="img/slidercontrolprev.png", alt="")
+        span.sr-only Previous
+      a.slider-control.slider-control-next(href='#carouselCases' role='button' data-slide='next')
+        img(src="img/slidercontrolnext.png", alt="")
+        span.sr-only Next
+  .city-bg
+    section.certificates
+      h2.title.certificates-title сертификаты
+      .certificates-images
+        - for (let i = 1; i <= 3; i++)
+          .certificate-image
+            img(src="img/certificate.png", alt="")
+    section.sight
+      h2.title.sight-title достопримечательность <br> города
+      .wrapper
+        #carouselSight.carousel.slide.sight-slider(data-ride='carousel' data-interval="10000")
+          .carousel-inner
+            .carousel-item.active
+              .slider-image
+                img.d-block.w-100(src='img/sight.png' alt='Первый слайд')
+              .slider-item-text
+                p.slider-description
+                    b Many themes claim to have 
+                    | a quick setup, but leave you dealing with several XML files to manually import. Who wants to do that? We sure don’t. Avada truly offers a quick, easy setup. Install the theme, click the demo  It doesn’t get any easier, our demo content importer is a beautiful thing. We sure don’t. Avada truly offers a quick, easy setup. Install the theme, click the demo  It doesn’t ...
+            .carousel-item
+              .slider-image
+                img.d-block.w-100(src='img/sight.png' alt='Второй слайд')
+              .slider-item-text
+                p.slider-description
+                    b Many themes claim to have 
+                    | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis ut cumque praesentium porro architecto, quidem inventore laborum quibusdam possimus ipsam sapiente recusandae iusto dolorum cupiditate distinctio culpa minus at dolores.
+          .slider-controls.sight-slider-controls
+            a.slider-control.slider-control-prev(href='#carouselSight' role='button' data-slide='prev')
+              img(src="img/slidercontrolprev.png", alt="")
+              span.sr-only Previous
+            a.slider-control.slider-control-next(href='#carouselSight' role='button' data-slide='next')
+              img(src="img/slidercontrolnext.png", alt="")
+              span.sr-only Next
+  section.contact-form
+    h3.contact-form-title ОСТАЛИСЬ ВОПРОСЫ?
+      p.caption Оставьте заявку и получите ответы на вопросы
+    form(action="sendmail.php", method="post")
+      .inputs
+        each input in form
+          input.input-text(type="text", name=input.content id=input.content placeholder=input.placeholder)
+      input.submit-butn(type="submit", value="Получить сертификат")
+  section.contacts
+    h2.title.contacts-title контакты
+    .map
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bHGFPReUo3t0jLr64gPQeI5S_Ibd6mV5" width="640" height="480"></iframe>
+    .contac-info-row
+      .contac-info
+        p Zhang Jia Wan, Shapingba Qu, Chongqing Shi
+        a(href="tel:+16048746530") +1 604-874-6530
+      .contac-info
+        p Zhang Jia Wan, Shapingba Qu, Chongqing Shi
+        a(href="tel:+16048746530") +1 604-874-6530
+      .empty
+      .empty
+

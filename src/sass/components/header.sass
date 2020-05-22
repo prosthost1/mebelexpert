@@ -16,7 +16,6 @@
     color: color(red)
 .call-back_butn
   +butn()
-  
   &:hover 
     color: color(white)
     background-color: color(red)
@@ -24,6 +23,7 @@
   float: left
   font-size: 0
 .alert
+  margin: 0
   padding: 25px 0 60px
   background-image: url(../img/headerbg.png)
   background-size: cover
@@ -70,6 +70,8 @@
 .input-text 
   display: block
   box-sizing: border-box
+  +text(14px, $textGray, $thin)
+  line-height: 17pxalert
   width: 100%
   padding: 11px 20px
   border-radius: 2px;
@@ -80,11 +82,12 @@
   &::placeholder
     +text(14px, $textGray, $thin)
 .submit-butn
-  +butn(15px 45px, 19px, $white, $red, $red)
+  width: 263px
+  +butn(15px 0, 19px, $white, $red, $red)
+  text-align: center
   font-weight: $semiBold
   border-radius: 2px
   cursor: pointer
   &:hover
     background-color: $white
     color: $red
-    

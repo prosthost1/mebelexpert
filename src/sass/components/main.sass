@@ -1,5 +1,7 @@
+// section PRICING
 .pricing
   padding: 70px 0
+  position: relative
   +bg("mainbg.png")
 .title
   position: relative
@@ -59,13 +61,14 @@
   padding: 0
   li 
     +text(18px, $textGray, $normal, 0 0 35px)
-    position: relative
-    &::before 
-      content: ''
-      +posAbsolute(10px, 9px)
-      left: -20px
-      top: 7px
-      background-color: $red
+.list-item
+  position: relative
+  &::before 
+    content: ''
+    +posAbsolute(10px, 9px)
+    left: -20px
+    top: 7px
+    background-color: $red
 .column-totals-title
   +text(18px, $red, $bold, 0 0 10px)
   text-transform: uppercase
@@ -77,57 +80,282 @@
   &:hover
     color: $white
     background-color: $red
-.advantage 
+//section ADVANTAGES
+.advantages
+  position: relative
   width: 100%
+  padding-bottom: 60px
   font-size: 0
-  .wrapper
-    display: flex
-    justify-content: space-between
+.tree-dec-right
+  +posAbsolute(448px, 1170px)
+  top: -300px
+  right: 0
+  background-image: url(../img/treedec1.png)
+.advantage-image
+  transform: translateX(-40px)
 .advantage:nth-child(even)
   background-image: linear-gradient(to right, #fff, #f1f5f3, #fff)
   text-align: right
+  .advantage-image
+    transform: translateX(40px)
   .wrapper
     flex-direction: row-reverse
-.advantage:nth-child(odd)
-  .advantagesimage:before 
-    left: -40px
-.guide
-  .advantagesimage:before 
-    left: 10px
-.advantagescontent 
+.advantage 
+  padding: 20px 0 25px
+  .wrapper
+    display: flex
+    justify-content: space-between
+.advantage-content 
   max-width: 726px
   h3
     +text(27px, $textGray, $semiBold, 0 0 20px)
     text-transform: uppercase
+    margin: 40px 0 25px
   p
     +text(18px, $textGray, $thin)
     line-height: 30px
-.advantagesimage
-  position: relative
-  img
-    z-index: 100
-  &:before
-    content: ''
-    +posAbsolute(277px, 277px)
-    top: -30px
-    background-image: url(../img/advantagedec.png)
-@each $advantage in $advantages
-  .#{map-get($advantage, name)}
-    padding: map-get($advantage, padding)
-    h3 
-      margin: map-get($advantage, margin)
 .factory
-  .advantagescontent
+  .advantage-content
   p
     padding-left: 12px
     max-width: 633px
     font-size: 20px
   h3
     font-size: 29px
-  .advantagesimage:before
-    width: 354px
-    height: 354px
-    top: -40px
-    background-image: url(../img/factorydec.png)
-    
-  
+//section SPA
+.spa
+  padding: 90px 0 75px
+  +bg("../img/spa.png", cover, no-repeat)
+.spa-content
+  padding: 28px 32px 40px
+  background-color: rgba(0, 0, 0, 0.7)
+.spa-title
+  text-align: center
+  line-height: 57px;
+  +text(37px, $white, $thin, 0 0 15px)
+  strong
+    text-transform: uppercase
+    +text(46px, $white, $semiBold)
+.spa-info
+  display: flex
+  justify-content: space-between
+.spa-list
+  position: relative
+  padding-left: 40px
+  +text(20px, $white, $normal)
+  line-height: 31px;
+  &::before
+    content: ''
+    +posAbsolute(4px, 252px)
+    top: 12px
+    right: -90px
+    background-color: $red
+.spa-list_item
+  &::before
+    width: 7px
+    height: 8px
+    top: 11px
+.spa-form
+  display: flex
+  justify-content: space-around
+  flex-direction: column
+  padding-top: 22px
+  width: 375px
+  .input-text
+    margin-bottom: 15px
+  .submit-butn
+    padding: 12px 0
+// section WARRANTIES
+.warranties
+  padding: 85px 0 70px
+  text-align: center
+  h2 
+    margin-bottom: 80px
+.warranties-description
+  display: inline-block
+  max-width: 940px
+  text-align: center
+  +text(18px, $textGray, $thin, 0 0 40px)
+  line-height: 30px;
+.warranties-items
+  display: flex
+  justify-content: space-around
+  .warranty
+    width: 310px
+    &:hover
+      cursor: pointer
+      .warranty-image:before
+        opacity: 1
+        transform: rotate(0)
+.warranty-image
+  position: relative
+  &:before
+    content: ''
+    +posAbsolute(94px, 94px)
+    bottom: 10px
+    right: 10px
+    background-image: url(../img/garantija.png)
+    transition: opacity .7s ease, transform .5s ease
+    opacity: 0
+    transform: rotate(90deg)
+.warranty-title
+  +text(23px, $textGray, $semiBold, 35px 0 10px)
+  text-transform: uppercase
+.warranty-list
+  padding: 0
+  +text(17px, #000, $normal)
+  line-height: 25px;
+// section CASES
+.cases
+  padding: 60px 0 70px
+  background-image: url(../img/cases.png)
+.cases-title
+  margin-bottom: 90px
+.cases-slider
+  box-shadow: 0 15px 21px rgba(0, 0, 0, 0.25)
+  margin-bottom: 20px
+.slider-content
+  padding: 10px 25px 10px 10px 
+  display: flex
+  justify-content: space-between
+  border-radius: 6px
+  background-color: #fff
+.slider-description
+  padding: 15px 0 20px
+  box-sizing: content-box
+  max-width: 406px
+  +text(20px, $textGray, $thin)
+  line-height: 32px;
+  b
+    font-weight: $bold
+.feedback
+  display: flex
+  justify-content: space-between
+  margin: 0
+  p
+    position: relative
+    box-sizing: content-box
+    max-width: 281px
+    padding-right: 21px
+    +text(14px, $textGray, $thin)
+    line-height: 22px;
+    &::before
+      content: ''
+      +posAbsolute(54px, 52px)
+      right: 30px
+      bottom: -8px
+      background-image: url(../img/quote.png)
+    b
+      font-weight: $semiBold
+      color: #cc0000;
+.slider-controls
+  text-align: center
+.slider-control
+  display: inline-block
+  width: 41px;
+  height: 41px; 
+  border-radius: 50%
+// BACKGROUND
+.city-bg
+  +bg("../img/sightbg.png")
+  background-position: 0 63%
+// section CERTIFICATES
+.certificates
+  padding: 80px 0 100px
+.certificates-title 
+  margin-bottom: 100px
+.certificates-images
+  text-align: center
+.certificate-image
+  display: inline-block
+// section SIGHT
+.sight
+  padding-bottom: 85px
+.sight-title
+  margin-bottom: 90px
+.slider-item-text
+  padding-top: 50px
+  display: flex
+  justify-content: flex-end
+.sight-slider
+  position: relative
+  p
+    padding: 0
+    min-height: 118px
+    max-width: 870px
+    font-size: 17px
+    line-height: 30px;
+.slider-image
+  box-shadow: 0 15px 21px rgba(1, 1, 1, 0.15)
+.sight-slider-controls
+  position: absolute
+  bottom: 82px
+  a
+    margin: 0 5px
+    border-radius: 50%
+    background-color: #fff
+// section CONTACT FORM
+.contact-form
+  padding: 75px 0
+  +bg("../img/contactformbg.png", cover)
+  text-align: center
+  form
+    background-color: rgba(0, 0, 0, 0.6)
+    padding: 55px 35px
+    display: inline-block
+    width: 440px
+    min-height: 350px
+    text-align: left
+    .inputs
+      margin-bottom: 25px
+    .input-text
+      margin-bottom: 15px
+.contact-form-title
+  +text(61px, $white, $normal, 0 0 55px)
+  p
+    font-size: 38px
+    font-weight: $thin
+// section CONTACTS
+.contacts
+  position: relative
+  padding: 70px 0 65px
+  background-image: url(../img/contactsbg.png)
+  background-size: cover
+  &:before 
+    content: ''
+    +posAbsolute(537px, 370px)
+    background-image: url(../img/chair.png)
+    left: 53%
+    top: 54.7%
+.contacts-title
+  margin-bottom: 90px
+.map
+  margin-bottom: 45px
+  overflow: hidden
+  box-shadow: 0 15px 21px rgba(0, 0, 0, 0.25)
+  iframe
+    margin-top: -2.5%
+    width: 100%
+.contac-info-row
+  display: flex
+  justify-content: center
+  p
+    +text(16px, $textGray, $normal, 0 0 20px)
+    line-height: 25px
+  a
+    +text(19px, #666, $normal)
+    &:hover
+      text-decoration: none
+      color: $red
+  div
+    width: 225px
+    margin: 0 37px 
+  .empty
+    width: 150px
+.contac-info
+  position: relative
+  &:before
+    content: ''
+    +posAbsolute(17px, 20px)
+    left: -28px
+    background-image: url(../img/pin.png)
